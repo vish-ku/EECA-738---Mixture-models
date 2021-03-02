@@ -7,6 +7,9 @@ clustering, in the sense that we get the probability of the data point belonging
 
 In this model we choose randomly chosen gaussian functions and calculate the probability that the given data points are from the given gaussian. Then we calculate the posterior probability ( responsibilities )  of gaussians given the data points by applying bayes rule - This is the Expectation step. Once we have those we update the gaussian, i.e. that is we find the new means and covariance - this step is called the maximization step. The formula for the new means is derived by maximizing the log likelihood function of the gaussian mixture model. 
 
+I have used the Multivariate_normal function from the numpy library to find the probability of data points from a gaussian. How ever as we increase the dimension of the data point, the function crashes and returns and error, also at times the algorithm might churn out a non singular covariance matrix which results in an error. 
+In these cases, we just re run the algorithm untill it goes through. 
+
 # Data sets
 
 One of the data sets that I chose was the iris data set. This data has information collected form flowers regarding their Sepal and Petal width and length and we try to cluster the flowers based on these datas. 
